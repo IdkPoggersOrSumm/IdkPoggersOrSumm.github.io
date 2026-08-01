@@ -59,7 +59,7 @@
 		}));
 	}).then(function() {
 		var script = document.createElement('script');
-		script.src = 'assets/js/main.js?v=20260801-layout';
+		script.src = 'assets/js/main.js?v=20260801-layout-2';
 		document.body.appendChild(script);
 	});
 })();
