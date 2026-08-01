@@ -346,10 +346,12 @@
 
 				&.project-column-left .item:nth-child(odd) {
 					transform: translateY(1.5em);
+					margin-bottom: 1.5em;
 				}
 
 				&.project-column-right .item:nth-child(even) {
 					transform: translateY(2.5em);
+					margin-bottom: 2.5em;
 				}
 			}
 		}
@@ -370,6 +372,10 @@
 			margin: ($border * 0.5);
 			height: 16em;
 			box-shadow: 0 0 0 $border #ffffff;
+
+			&.intro.is-filtered {
+				display: none;
+			}
 
 			&.span-1 {
 				width: $width;
@@ -547,6 +553,7 @@
 
 					.item {
 						transform: none !important;
+						margin-bottom: 0;
 					}
 				}
 			}

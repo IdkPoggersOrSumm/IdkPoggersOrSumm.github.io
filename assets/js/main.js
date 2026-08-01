@@ -165,6 +165,9 @@
 				$project.toggleClass('is-filtered', !matches);
 			});
 
+			// Hide the intro card when a category is selected; show it again on Home.
+			$main.find('.item.intro').toggleClass('is-filtered', filter !== 'all');
+
 			$main.scrollLeft(0);
 
 		});

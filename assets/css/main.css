@@ -483,10 +483,12 @@ input, select, textarea {
 
 				#main .items.project-layout .project-column-left .item:nth-child(odd) {
 					transform: translateY(1.5em);
+					margin-bottom: 1.5em;
 				}
 
 				#main .items.project-layout .project-column-right .item:nth-child(even) {
 					transform: translateY(2.5em);
+					margin-bottom: 2.5em;
 				}
 
 		#main .item {
@@ -502,6 +504,10 @@ input, select, textarea {
 			height: 16em;
 			box-shadow: 0 0 0 10px #ffffff;
 		}
+
+			#main .item.intro.is-filtered {
+				display: none;
+			}
 
 			#main .item.span-1 {
 				width: 20em;
@@ -701,6 +707,7 @@ input, select, textarea {
 
 						#main .items.project-layout .project-column .item {
 							transform: none !important;
+							margin-bottom: 0;
 						}
 
 				#main .item {
