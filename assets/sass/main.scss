@@ -395,6 +395,24 @@
 					letter-spacing: 0.08em;
 				}
 
+				.read-more {
+					position: absolute;
+					bottom: 1em;
+					right: 1em;
+					z-index: 3;
+					padding: 0.45em 0.7em;
+					border-radius: 0.25em;
+					background: rgba(18, 21, 29, 0.85);
+					color: #fff;
+					font-size: 0.8em;
+					text-decoration: none;
+				}
+
+				.read-more:hover,
+				.read-more:focus-visible {
+					background: rgba(255, 255, 255, 0.2);
+				}
+
 				&.is-filtered {
 					display: none;
 				}

@@ -80,11 +80,16 @@
 				$wrapper.css('min-height', 'calc(100vh - 30px)');
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
+		var removePreload = function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-		});
+		};
+
+		if (document.readyState === 'complete')
+			removePreload();
+		else
+			$window.on('load', removePreload);
 
 	// Items.
 
