@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Parallelism by HTML5 UP</title>
+		<title>Jacob's Project Portfolio</title>
+		<meta name="description" content="A visual portfolio of Jacob's modeling, software, and electrical projects." />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,55 +18,99 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<!--
+					CREATOR NOTE: These buttons are the portfolio filters.
+					The value in data-filter must match a project's data-category.
+					To create a new section, add another button here and tag projects below.
+				-->
+				<nav id="portfolio-filters" aria-label="Portfolio project categories">
+					<button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">Home</button>
+					<button type="button" class="filter-button" data-filter="modeling" aria-pressed="false">3D &amp; Digital Modeling</button>
+					<button type="button" class="filter-button" data-filter="software" aria-pressed="false">Software &amp; Web Development</button>
+					<button type="button" class="filter-button" data-filter="electrical" aria-pressed="false">Electrical &amp; Embedded Systems</button>
+				</nav>
+
 				<!-- Main -->
 					<section id="main">
 
 						<!-- Items -->
-							<div class="items">
+								<div class="items">
 
-								<div class="item intro span-2">
-									<h1>Parallelism</h1>
-									<p>A responsive portfolio site<br />
-									template by HTML5 UP</p>
-								</div>
+				<div class="item intro span-2">
+					<h1>Jacob's<br />Portfolio</h1>
+					<p>Projects, experiments,<br />and things I am learning.</p>
+				</div>
 
-								<article class="item thumb span-1">
+				<!--
+					CREATOR NOTE: PROJECT TEMPLATE
+					To make another project, copy one complete article and change:
+					1. data-category: modeling, software, or electrical
+					2. data-description: the text shown in the popup
+					3. data-started: the project's start month and year
+					4. h2: the project title
+					5. project-tag: the visible label on the image
+					6. both image paths: href is the popup image; img src is the card image
+				-->
+				<article
+					class="item thumb span-2"
+					data-category="modeling"
+					data-description="My first real attempt at making a precise model, in this case to suit a FitBit Air without applying excessive pressure to the shell."
+					data-started="July 27, 2026">
+					<h2>Fitbit Air Pebble Holder</h2>
+					<span class="project-tag">3D Modeling</span>
+					<a href="images/3DM-FTBTHLDR-001.png" class="image">
+						<img
+							src="images/3DM-FTBTHLDR-001.png"
+							alt="Dimensioned technical drawing of a Fitbit Air Pebble Holder">
+					</a>
+				</article>
+
+				<!-- CREATOR NOTE: Copy data-category="software" onto new projects to tag them. -->
+				<article class="item thumb span-1" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="January 2025">
 									<h2>You really got me</h2>
+									<span class="project-tag">Software</span>
 									<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-2">
+				<article class="item thumb span-2" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="March 2025">
 									<h2>Ad Infinitum</h2>
+									<span class="project-tag">3D Modeling</span>
 									<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-1">
+				<article class="item thumb span-1" data-category="electrical" data-description="A place to describe the circuit, hardware, wiring, or experiment shown here." data-started="May 2025">
 									<h2>Different.</h2>
+									<span class="project-tag">Electrical</span>
 									<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-1">
+				<article class="item thumb span-1" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="June 2025">
 									<h2>Elysium</h2>
+									<span class="project-tag">3D Modeling</span>
 									<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-3">
+				<article class="item thumb span-3" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="August 2025">
 									<h2>Kingdom of the Wind</h2>
+									<span class="project-tag">Software</span>
 									<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-1">
+				<article class="item thumb span-1" data-category="electrical" data-description="A place to describe the circuit, hardware, wiring, or experiment shown here." data-started="September 2025">
 									<h2>The Pursuit</h2>
+									<span class="project-tag">Electrical</span>
 									<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-2">
+				<article class="item thumb span-2" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="October 2025">
 									<h2>Boundless</h2>
+									<span class="project-tag">Software</span>
 									<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a>
 								</article>
 
-								<article class="item thumb span-2">
+				<article class="item thumb span-2" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="November 2025">
 									<h2>The Spectators</h2>
+									<span class="project-tag">3D Modeling</span>
 									<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
 								</article>
 
@@ -74,36 +119,57 @@
 						<!-- Items -->
 							<div class="items">
 
-								<article class="item thumb span-3"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Boundless</h2><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>The Spectators</h2><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>You really got me</h2><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Ad Infinitum</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>Different.</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>Elysium</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
+								<!-- CREATOR NOTE: The second row is a repeat of the projects for the wide layout. Keep its tags in sync. -->
+				<article class="item thumb span-3" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="August 2025"><h2>Kingdom of the Wind</h2><span class="project-tag">Software</span><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
+				<article class="item thumb span-1" data-category="electrical" data-description="A place to describe the circuit, hardware, wiring, or experiment shown here." data-started="September 2025"><h2>The Pursuit</h2><span class="project-tag">Electrical</span><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
+				<article class="item thumb span-2" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="October 2025"><h2>Boundless</h2><span class="project-tag">Software</span><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
+				<article class="item thumb span-2" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="November 2025"><h2>The Spectators</h2><span class="project-tag">3D Modeling</span><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
+				<article class="item thumb span-1" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="January 2025"><h2>You really got me</h2><span class="project-tag">Software</span><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
+				<article class="item thumb span-2" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="March 2025"><h2>Ad Infinitum</h2><span class="project-tag">3D Modeling</span><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
+				<article class="item thumb span-1" data-category="electrical" data-description="A place to describe the circuit, hardware, wiring, or experiment shown here." data-started="May 2025"><h2>Different.</h2><span class="project-tag">Electrical</span><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
+				<article class="item thumb span-2" data-category="software" data-description="A place to describe the software, website, or interactive experience behind this project." data-started="August 2025"><h2>Kingdom of the Wind</h2><span class="project-tag">Software</span><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
+				<article class="item thumb span-1" data-category="modeling" data-description="A place to describe the modeling process, tools, and final result." data-started="June 2025"><h2>Elysium</h2><span class="project-tag">3D Modeling</span><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
 
-							</div>
+				<article
+					class="item thumb span-2"
+					data-category="modeling"
+					data-description="A dimensioned technical drawing for a custom Fitbit Air Pebble Holder."
+					data-started="July 27, 2026">
+					<h2>Fitbit Air Pebble Holder</h2>
+					<span class="project-tag">3D Modeling</span>
+					<a href="images/3DM-FTBTHLDR-001.png" class="image">
+						<img
+							src="images/3DM-FTBTHLDR-001.png"
+							alt="Dimensioned technical drawing of a Fitbit Air Pebble Holder">
+					</a>
+				</article>
+
+			</div>
 
 					</section>
 
 				<!-- Footer -->
 					<section id="footer">
 						<section>
-							<p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>. Free for personal
-							and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
+							<p>This is my project portfolio; a visual record of things I am building, modeling, wiring, and learning.</p>
 						</section>
 						<section>
 							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+								<!--
+									CREATOR NOTE: Put your links inside each href="..." below.
+									Examples:
+									GitHub:   href="https://github.com/your-username"
+									LinkedIn: href="https://www.linkedin.com/in/your-username"
+									Instagram: href="https://www.instagram.com/your-handle"
+									Email:    href="mailto:you@example.com"
+								-->
+								<li><a href="https://github.com/IdkPoggersOrSumm" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/jacob-rodriguez07" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.instagram.com/justjacob07" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="somethingtodowitsharks@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Jacob</li><li>Built from the Parallelism template</li>
 							</ul>
 						</section>
 					</section>

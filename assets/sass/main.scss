@@ -380,6 +380,25 @@
 					z-index: 2;
 				}
 
+				.project-tag {
+					position: absolute;
+					top: 0.75em;
+					left: 0.75em;
+					z-index: 2;
+					border-radius: 999px;
+					background: rgba(18, 21, 29, 0.8);
+					color: #fff;
+					font-size: 0.8em;
+					line-height: 1em;
+					padding: 0.5em 0.75em;
+					text-transform: uppercase;
+					letter-spacing: 0.08em;
+				}
+
+				&.is-filtered {
+					display: none;
+				}
+
 				img {
 					display: block;
 					z-index: 1;
@@ -487,6 +506,38 @@
 			.item {
 				//width: calc(100vw - #{$border * 4}) !important;
 				height: 10em;
+			}
+		}
+	}
+
+	/* Portfolio Filters */
+
+	#portfolio-filters {
+		position: relative;
+		z-index: 2;
+		width: min(92vw, 80em);
+		padding: 1.5em 1em 0.5em;
+		text-align: center;
+
+		.filter-button {
+			border: 1px solid rgba(255, 255, 255, 0.35);
+			border-radius: 999px;
+			background: rgba(18, 21, 29, 0.55);
+			color: rgba(255, 255, 255, 0.75);
+			cursor: pointer;
+			font: inherit;
+			line-height: 1.2em;
+			margin: 0.35em;
+			padding: 0.65em 1em;
+			@include vendor('transition', 'background 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out');
+
+			&:hover,
+			&:focus-visible,
+			&.is-active {
+				background: #d64760;
+				border-color: #d64760;
+				color: #fff;
+				outline: none;
 			}
 		}
 	}
@@ -615,6 +666,50 @@
 			text-align: center;
 			font-size: 1.25em;
 			color: #fff;
+
+			// CREATOR NOTE: This is the popup's project-information panel.
+			// Change the width, padding, or colors here to customize it.
+			left: calc(100% + 1em) !important;
+			top: 0 !important;
+			bottom: auto !important;
+			width: 18em !important;
+			height: 100% !important;
+			min-height: 16em;
+			padding: 1.5em !important;
+			background: rgba(18, 21, 29, 0.94);
+			line-height: normal !important;
+			text-align: left;
+			display: flex !important;
+			flex-direction: column;
+			box-shadow: 0 0 0 10px #fff;
+
+			.project-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+
+				h2 {
+					font-size: 1.5em;
+					line-height: 1.1em;
+					margin-bottom: 0.75em;
+				}
+
+				p {
+					font-size: 0.95em;
+					line-height: 1.5em;
+					margin: 0;
+				}
+
+				time {
+					border-top: 1px solid rgba(255, 255, 255, 0.2);
+					color: rgba(255, 255, 255, 0.55);
+					font-size: 0.8em;
+					letter-spacing: 0.08em;
+					padding-top: 1em;
+					text-transform: uppercase;
+				}
+			}
 		}
 
 		.nav-next, .nav-previous {
@@ -660,6 +755,40 @@
 			}
 		}
 
+		// CREATOR NOTE: The popup is centered as one composition.
+		// The image stays on the left and the info panel balances it on the right.
+		@include breakpoint('>medium') {
+			margin-left: -24em;
+			// Reserve room for the attached info panel and keep a 5vw gutter
+			// around the complete popup composition at every desktop width.
+			max-width: calc(90vw - 24em);
+
+			.pic {
+				max-width: 100%;
+
+				img {
+					max-width: 100% !important;
+					height: auto !important;
+				}
+			}
+		}
+
+		// On smaller screens, stack the info panel under the image so the
+		// combined popup always stays inside the viewport.
+		@include breakpoint('<=medium') {
+			margin-left: 0;
+			transform: translateY(-4.5em);
+
+			.caption {
+				left: 0 !important;
+				top: calc(100% + 1em) !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 0;
+				box-shadow: 0 0 0 2.5px #fff;
+			}
+		}
+
 		@include breakpoint('<=small') {
 			background: #0a0f1c;
 			box-shadow: 0px 0px 30px 10px rgba(8, 11, 19, 0.85);
@@ -667,7 +796,12 @@
 			@include vendor('box-sizing', 'content-box');
 
 			.caption {
-				display: none !important;
+				left: 0 !important;
+				top: calc(100% + 1em) !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 0;
+				box-shadow: 0 0 0 2.5px #fff;
 			}
 
 			.nav-next {

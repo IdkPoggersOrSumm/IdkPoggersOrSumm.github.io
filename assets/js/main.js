@@ -120,13 +120,48 @@
 			popupLoaderText: '',
 			selector: '.item.thumb a.image',
 			caption: function($a) {
-				return $a.prev('h2').html();
+				// CREATOR NOTE: Edit data-description and data-started on the
+				// project article in index.html. This builds the popup text.
+				var $project = $a.closest('.item'),
+					title = $('<div>').text($project.find('h2').first().text()).html(),
+					description = $('<div>').text($project.data('description') || 'Add a short project description here.').html(),
+					started = $('<div>').text($project.data('started') || 'Add a start date here.').html();
+
+				return '<div class="project-info"><div><h2>' + title + '</h2><p>' + description + '</p></div><time>Started: ' + started + '</time></div>';
 			},
 			usePopupDefaultStyling: false,
 			usePopupCloser: false,
 			usePopupCaption: true,
 			usePopupNav: true,
 			windowMargin: 50
+		});
+
+	// CREATOR NOTE: Filtering works by matching each button's data-filter
+	// value to each project's data-category value in index.html.
+		$('#portfolio-filters .filter-button').on('click', function() {
+
+			var $button = $(this),
+				filter = $button.data('filter');
+
+			$('#portfolio-filters .filter-button')
+				.removeClass('is-active')
+				.attr('aria-pressed', 'false');
+
+			$button
+				.addClass('is-active')
+				.attr('aria-pressed', 'true');
+
+			// CREATOR NOTE: To add a new category, you only need matching
+			// data-filter and data-category names; this logic stays the same.
+			$main.find('.item.thumb').each(function() {
+				var $project = $(this),
+					matches = filter === 'all' || $project.data('category') === filter;
+
+				$project.toggleClass('is-filtered', !matches);
+			});
+
+			$main.scrollLeft(0);
+
 		});
 
 		breakpoints.on('>small', function() {
