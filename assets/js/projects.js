@@ -23,6 +23,27 @@
 			slot.textContent = 'Projects could not be loaded.';
 		});
 	}).then(function() {
+		var items = document.querySelector('.items');
+		document.querySelector('#main').classList.add('project-page');
+		var intro = items.querySelector('.intro');
+		var projects = Array.prototype.slice.call(items.querySelectorAll('.item.thumb'));
+		var leftColumn = document.createElement('div');
+		var rightColumn = document.createElement('div');
+
+		leftColumn.className = 'project-column project-column-left';
+		rightColumn.className = 'project-column project-column-right';
+
+		projects.forEach(function(project) {
+			var side = (project.dataset.side || 'right').toLowerCase();
+			(side === 'left' ? leftColumn : rightColumn).appendChild(project);
+		});
+
+		items.innerHTML = '';
+		items.classList.add('project-layout');
+		items.appendChild(intro);
+		items.appendChild(leftColumn);
+		items.appendChild(rightColumn);
+	}).then(function() {
 		return Promise.all(Array.prototype.slice.call(document.querySelectorAll('[data-read-more]')).map(function(project) {
 			var path = project.dataset.readMore;
 			return fetch(path, { method: 'HEAD' }).then(function(response) {

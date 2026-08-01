@@ -251,7 +251,7 @@
 		min-height: 100vh;
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'column');
-		@include vendor('justify-content', 'space-between');
+		@include vendor('justify-content', 'flex-start');
 		@include vendor('align-items', 'center');
 		@include vendor('transition', 'filter 0.5s ease-in-out');
 
@@ -311,6 +311,48 @@
 		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 		padding: ($border * 0.5);
+		margin: 1.5em auto 3em;
+		overflow: visible;
+
+		&.project-page {
+			width: min(92vw, 80em);
+		}
+
+		.items.project-layout {
+			@include vendor('display', 'grid');
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			column-gap: 2em;
+			row-gap: 1em;
+			align-items: start;
+
+			> :last-child {
+				border-right: 0;
+			}
+
+			> .intro {
+				grid-column: 1 / -1;
+				width: 100%;
+			}
+
+			.project-column {
+				@include vendor('display', 'flex');
+				@include vendor('flex-direction', 'column');
+				gap: 1.5em;
+
+				.item {
+					width: 100%;
+					margin: 0;
+				}
+
+				&.project-column-left .item:nth-child(odd) {
+					transform: translateY(1.5em);
+				}
+
+				&.project-column-right .item:nth-child(even) {
+					transform: translateY(2.5em);
+				}
+			}
+		}
 
 		.items {
 			@include vendor('display', 'flex');
@@ -481,12 +523,31 @@
 			overflow-y: auto;
 			padding: ($border * 0.5);
 
+			&.project-page {
+				width: 100%;
+			}
+
 			.items {
 				@include vendor('flex-wrap', 'wrap');
 				@include vendor('justify-content', 'center');
 
 				> :last-child {
 					border-right: 0;
+				}
+			}
+
+			.items.project-layout {
+				@include vendor('display', 'flex');
+				@include vendor('flex-direction', 'column');
+				gap: 1em;
+
+				.project-column {
+					width: 100%;
+					gap: 1em;
+
+					.item {
+						transform: none !important;
+					}
 				}
 			}
 
@@ -531,9 +592,13 @@
 	/* Portfolio Filters */
 
 	#portfolio-filters {
-		position: relative;
+		position: sticky;
+		top: 0;
 		z-index: 2;
-		width: min(92vw, 80em);
+		align-self: stretch;
+		width: 100%;
+		background: rgba(18, 21, 29, 0.88);
+		backdrop-filter: blur(0.5em);
 		padding: 1.5em 1em 0.5em;
 		text-align: center;
 
@@ -565,6 +630,7 @@
 	#footer {
 		width: 100%;
 		padding: 1.5em;
+		margin-top: auto;
 		@include vendor('display', 'flex');
 		@include vendor('justify-content', 'space-between');
 		position: relative;
